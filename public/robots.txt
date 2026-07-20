@@ -1,0 +1,10 @@
+# HiLink Workspaces
+User-agent: *
+Allow: /
+
+# Tool/filter states — thin or duplicate content, no SEO value
+Disallow: /recommend
+Disallow: /spaces
+Disallow: /portal
+
+Sitemap: https://hilink.vn/sitemap.xml

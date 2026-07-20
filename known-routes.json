@@ -1,0 +1,11 @@
+[
+  "^/$",
+  "^/(locations|solutions|membership|partnerships|about|careers|forum|recommend|spaces|meeting-rooms|event-venues|terms|privacy|cookies|accessibility)$",
+  "^/locations/(obc|nha-chung|pp83|nq49|ttt-f15|ttt-f17|ttt-f19)$",
+  "^/locations/[^/]+/units/[^/]+$",
+  "^/solutions/(private-workspaces|hybrid-work|e-office|corporate-suites|specialized-suites|enterprise)$",
+  "^/partnerships/(landlords|brokers|enterprise|developers|business-services)$",
+  "^/forum/(future-of-flexible-workspaces-hanoi|guide-to-productive-remote-work-vietnam|member-story-novatech|workspace-design-focus-productivity|hanoi-ba-dinh-neighbourhood-guide|choosing-right-workspace-type)$",
+  "^/membership/(office|desk|roam|virtual)$",
+  "^/(meeting-rooms|event-venues|spaces)/.+$"
+]

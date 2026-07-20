@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Primary ------------------------------------------------------------
+         These static tags are the fallback for crawlers that do NOT execute
+         JavaScript (Facebook, Zalo, LinkedIn link previews, most SEO
+         auditors). Per-route tags are set at runtime by src/lib/seo.js.
+         The origin below is rewritten at build time from VITE_SITE_URL /
+         SITE_URL (see vite.config.js) so canonical always matches the
+         deployed domain. -->
+    <title>HiLink Workspaces · Coworking &amp; Serviced Offices Hanoi</title>
+    <meta name="description" content="Premium coworking, private offices, meeting rooms and virtual offices across seven locations in central Hanoi. Book a tour." />
+    <link rel="canonical" href="https://hilink.vn/" />
+    <link rel="alternate" hreflang="en" href="https://hilink.vn/" />
+    <link rel="alternate" hreflang="vi" href="https://hilink.vn/?lang=vi" />
+    <link rel="alternate" hreflang="x-default" href="https://hilink.vn/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="HiLink Workspaces" />
+    <meta name="theme-color" content="#F8F6F1" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/logo-hilink-mark.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HiLink Workspaces" />
+    <meta property="og:title" content="HiLink Workspaces · Coworking &amp; Serviced Offices Hanoi" />
+    <meta property="og:description" content="Premium coworking, private offices, meeting rooms and virtual offices across seven locations in central Hanoi. Book a tour." />
+    <meta property="og:url" content="https://hilink.vn/" />
+    <meta property="og:image" content="https://hilink.vn/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="vi_VN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HiLink Workspaces · Coworking &amp; Serviced Offices Hanoi" />
+    <meta name="twitter:description" content="Premium coworking, private offices, meeting rooms and virtual offices across seven locations in central Hanoi." />
+    <meta name="twitter:image" content="https://hilink.vn/og-default.jpg" />
+
+    <!-- Fonts are self-hosted (see src/index.css). Preloading the two faces
+         used above the fold starts them with the HTML instead of waiting for
+         the CSS to parse. -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/fonts/inter-latin-wght-normal.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/fonts/playfair-display-latin-wght-normal.woff2" />
+
+    <!-- Organization + WebSite: static so it is always crawlable -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://hilink.vn/#organization",
+      "name": "HiLink Workspaces",
+      "url": "https://hilink.vn/",
+      "logo": "https://hilink.vn/logo-hilink-lockup.svg",
+      "description": "Premium flexible workspaces and serviced offices in central Hanoi, Vietnam.",
+      "email": "hello@hilink.vn",
+      "telephone": "+84-24-3936-9197",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Floor 7, 60 Lý Thái Tổ, Hoàn Kiếm",
+        "addressLocality": "Hà Nội",
+        "addressCountry": "VN"
+      },
+      "areaServed": { "@type": "City", "name": "Hà Nội" },
+      "sameAs": [
+        "https://www.linkedin.com",
+        "https://www.facebook.com",
+        "https://www.instagram.com"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://hilink.vn/#website",
+      "url": "https://hilink.vn/",
+      "name": "HiLink Workspaces",
+      "inLanguage": ["en", "vi"],
+      "publisher": { "@id": "https://hilink.vn/#organization" }
+    }
+    </script>
+
+    <!-- Styles for the crawlable fallback below. The whole block is replaced
+         the moment React mounts, so these rules apply only pre-hydration /
+         for non-JS user agents. Brand palette so the brief pre-hydration
+         frame reads as the site, not as unstyled text. -->
+    <style>
+      .seo-fallback { font-family: Georgia, 'Times New Roman', serif; background: #F8F6F1; color: #0F0F0F; margin: 0; padding: 72px 24px 96px; line-height: 1.7; }
+      .seo-fallback > div { max-width: 720px; margin: 0 auto; }
+      .seo-fallback h1 { font-weight: 400; font-size: 2rem; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 20px; }
+      .seo-fallback h2 { font-weight: 400; font-size: 1.4rem; margin: 40px 0 12px; }
+      .seo-fallback h3 { font-weight: 600; font-size: 1.05rem; font-family: system-ui, sans-serif; margin: 24px 0 8px; }
+      .seo-fallback p, .seo-fallback li { font-size: 1rem; font-family: system-ui, sans-serif; color: #3d3a34; }
+      .seo-fallback a { color: #A88F5C; }
+      .seo-fallback nav a { margin-right: 16px; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- ── Crawlable fallback ──────────────────────────────────────────
+           Read by crawlers and auditors that do not execute JavaScript.
+           Gives the page a real H1, a correct H1→H2→H3 hierarchy, ~550
+           words of content and crawlable internal links. React's
+           createRoot().render() replaces everything inside #root on
+           mount, so real visitors only see this for the instant before
+           the JS bundle executes (which also improves first paint). -->
+      <div class="seo-fallback">
+        <div>
+          <h1>Premium Coworking &amp; Serviced Offices in Central Hanoi</h1>
+          <p>HiLink Workspaces operates seven characterful, design-led workspaces across the historic centre of Hanoi — in Hoàn Kiếm and Đống Đa, minutes from the Opera House, Hoàn Kiếm Lake and the central business district. From a single flexible desk to a fully fitted private floor, every location combines hospitality-grade service with enterprise-grade infrastructure: high-speed internet, meeting rooms, phone booths, printing, tea and coffee, and an on-site community team.</p>
+
+          <h2>Workspace solutions</h2>
+          <h3>Private offices</h3>
+          <p>Lockable, fully furnished serviced offices for teams of 2 to 100+, available on flexible monthly terms. Move-in ready, with utilities, cleaning, reception and meeting-room credits included in one transparent price.</p>
+          <h3>Coworking &amp; dedicated desks</h3>
+          <p>Open coworking memberships and dedicated desks in light-filled shared lounges, with 24/7 access on selected plans and the freedom to work from any HiLink location in Hanoi.</p>
+          <h3>Meeting rooms &amp; event spaces</h3>
+          <p>Boardrooms, training rooms and event venues bookable by the hour or by the day, with presentation screens, video-conferencing and catering options for teams, workshops and client sessions.</p>
+          <h3>Virtual offices</h3>
+          <p>A prestigious registered business address in central Hanoi with mail handling and company-registration support — the fastest way to establish a professional presence in Vietnam.</p>
+
+          <h2>Locations across central Hanoi</h2>
+          <p>Our workspaces are located at prime addresses including 60 Lý Thái Tổ in Hoàn Kiếm — steps from the Opera House and the State Bank — and 15 Tôn Thất Tùng in Đống Đa, close to Hanoi's university and medical district. Each building has its own character, from heritage French-quarter architecture to contemporary tower floors, all finished to the same premium HiLink standard.</p>
+
+          <h2>Why teams choose HiLink</h2>
+          <ul>
+            <li>Flexible terms — scale up, scale down, or switch locations as your team changes.</li>
+            <li>All-inclusive pricing in VND with no hidden service charges.</li>
+            <li>Bilingual English–Vietnamese community and support team.</li>
+            <li>Enterprise fit-out options for teams that need a floor of their own.</li>
+          </ul>
+
+          <h2>Không gian làm việc cao cấp tại trung tâm Hà Nội</h2>
+          <p>HiLink Workspaces cung cấp văn phòng trọn gói, chỗ ngồi coworking, phòng họp và văn phòng ảo tại bảy địa điểm ở trung tâm Hà Nội. Giá trọn gói minh bạch, hợp đồng linh hoạt, đội ngũ hỗ trợ song ngữ. Đặt lịch tham quan ngay hôm nay.</p>
+
+          <h2>Explore</h2>
+          <nav>
+            <a href="/locations">Locations</a>
+            <a href="/solutions">Solutions</a>
+            <a href="/membership">Membership</a>
+            <a href="/partnerships">Partnerships</a>
+            <a href="/meeting-rooms">Meeting rooms</a>
+            <a href="/event-venues">Event venues</a>
+            <a href="/about">About</a>
+            <a href="/careers">Careers</a>
+            <a href="/forum">Forum</a>
+          </nav>
+          <p>Contact us at <a href="mailto:hello@hilink.vn">hello@hilink.vn</a> or (+84) 24 3936 9197 to book a tour.</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

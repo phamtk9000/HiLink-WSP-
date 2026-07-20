@@ -1,0 +1,103 @@
+/* ── Mobile optimization layer ──────────────────────────────────────────────
+   Loaded after index.css. The app styles components inline, so this layer
+   uses class hooks + a few `[style*=…]` attribute selectors with !important
+   to retune the phone experience without touching every component.
+
+   Targets the mobile audit findings directly:
+     · tiny text            → minimum readable sizes for micro-labels
+     · hard-to-tap buttons  → ≥44px tap targets on interactive chrome
+     · sluggish INP         → cheaper compositing (no backdrop blur, lighter
+                              shadows), hover-only effects disabled
+     · layout               → tighter nav/section padding, stacked footer CTA */
+
+/* Sensible defaults at every width */
+html { -webkit-text-size-adjust: 100%; }
+img { height: auto; }
+a, button { -webkit-tap-highlight-color: rgba(168, 143, 92, 0.12); }
+
+@media (max-width: 768px) {
+
+  /* ── Navigation chrome ── */
+  .nav-inner { padding: 0 18px !important; gap: 16px !important; }
+  .nav-logo img { height: 44px !important; }
+
+  /* ── Micro-typography floor ─────────────────────────────────────────────
+     The design system uses 9–11px uppercase eyebrows/labels everywhere via
+     inline styles. On phones these fall below readable/audit thresholds.
+     React serializes numeric fontSize to `font-size: Npx`, so attribute
+     selectors can raise just the offending sizes without flattening the
+     hierarchy. */
+  [style*="font-size: 9px"]    { font-size: 11px !important; }
+  [style*="font-size: 10px"]   { font-size: 11.5px !important; }
+  [style*="font-size: 10.5px"] { font-size: 11.5px !important; }
+  [style*="font-size: 11px"]   { font-size: 12px !important; }
+  [style*="font-size: 11.5px"] { font-size: 12.5px !important; }
+  [style*="font-size: 12px"]   { font-size: 13px !important; }
+  [style*="font-size: 13px"]   { font-size: 14px !important; }
+  [style*="font-size: 13.5px"] { font-size: 14.5px !important; }
+
+  /* ── Forms: 16px inputs stop iOS Safari's auto-zoom on focus; full-height
+     comfortable fields and full-width submit buttons ── */
+  input, select, textarea {
+    font-size: 16px !important;
+    min-height: 48px;
+  }
+  textarea { min-height: 110px; }
+  form button[type="submit"],
+  .contact-grid button,
+  .loc-contact button {
+    width: 100% !important;
+    min-height: 50px !important;
+    font-size: 14px !important;
+  }
+
+  /* ── Tap targets on interactive chrome ── */
+  .nav-drop-item,
+  .reco-row button,
+  .reco-filter button,
+  .hilink-range { min-height: 44px; }
+  .reco-row > span { font-size: 13px !important; }
+
+  /* ── Section rhythm: desktop uses 100–140px vertical padding; on a phone
+     that is half a screen of empty space between sections ── */
+  .section-pad { padding-left: 18px !important; padding-right: 18px !important; }
+  .footer-pad  { padding-left: 18px !important; padding-right: 18px !important; }
+
+  /* ── Footer ── */
+  .ft-cta {
+    grid-template-columns: 1fr !important;
+    justify-items: start !important;
+    padding: 56px 0 44px !important;
+  }
+  .footer-grid { padding: 40px 0 36px !important; gap: 28px !important; }
+
+  /* ── Performance: compositing cost on low-end phones ──
+     backdrop-filter re-blurs on every scroll frame; a near-opaque solid is
+     visually equivalent and much cheaper. Also drop the giant page-shadow. */
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .site-header.is-scrolled { background: color-mix(in srgb, var(--bg) 96%, transparent) !important; }
+
+  /* Hover-only affordances have no meaning on touch — always show the state
+     that hover would have revealed */
+  .marq-view { opacity: 1 !important; transform: none !important; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .nav-inner { padding: 0 14px !important; }
+  .nav-logo img { height: 40px !important; }
+  .section-pad, .footer-pad { padding-left: 14px !important; padding-right: 14px !important; }
+}
+
+/* Users who ask the OS for reduced motion get it everywhere, not only where
+   framer checks */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
